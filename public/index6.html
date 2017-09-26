@@ -5,19 +5,22 @@
 <head>
   <meta charset="utf-8">
   <title>Hello, vue + axios!</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.green-indigo.min.css">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <script src="https://unpkg.com/vue"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
 </head>
 
 <body>
-  <div id="app">
+  <div id="app" class="demo-card-square mdl-card mdl-shadow--2dp" style="position:absolute;left:10%;top:10%;right:10%;">
     <form @submit.prevent="dosave">
       <fieldset>
         <legend>Detalhe contato <span v-if="detalhe.idcontato"> #{{detalhe.idcontato}}</span></legend>
         <label>Nome <input v-model="detalhe.nomecontato"/></label><br/>
         <label>Endereço <input v-model="detalhe.enderecocontato"/></label><br/>
         <label>Telefone <input v-model="detalhe.telefonecontato"/></label><br/>
-        <input type="submit" value="salvar" />
+        <input type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" value="salvar" />
       </fieldset>
     </form>
     <table>
@@ -37,7 +40,9 @@
           <td>{{contato.enderecocontato}}</td>
           <td>{{contato.telefonecontato}}</td>
           <td>
-            <button @click="editar(contato)">Editar</button>
+            <button @click="editar(contato)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+              Editar
+            </button>
           </td>
         </tr>
       </tbody>

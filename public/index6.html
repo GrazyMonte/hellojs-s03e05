@@ -43,6 +43,9 @@
             <button @click="editar(contato)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
               Editar
             </button>
+            <button @click="deletar(contato)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+              Deletar
+            </button>
           </td>
         </tr>
       </tbody>
@@ -80,6 +83,9 @@
         },
         editar(contato) {
           this.detalhe = contato;
+        },
+        deletar(contato) {
+          this.detalhe = null;
         },
         listcontatos(){
           api.get("/list").then(ret => this.lista = ret.data)

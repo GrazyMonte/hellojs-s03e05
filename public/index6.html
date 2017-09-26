@@ -85,7 +85,9 @@
           this.detalhe = contato;
         },
         deletar(contato) {
-          this.detalhe = null;
+          this.detalhe = contato; 
+          //Falta só descobrir como zerar todo mundo
+          //Acho que o segredo é descobrir pra onde Editar está direcionando
         },
         listcontatos(){
           api.get("/list").then(ret => this.lista = ret.data)
